@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Tameem's Website</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="img/img_20161110_wa0003_5C3_icon.ico" />
+
+    <style>
+        body {
+            height: 100%;
+            width:100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/alesia-kazantceva-283291.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+        }
+        /*---------Navbar collapse----*/
+        
+        .navbar {
+            width:100%;
+            margin-bottom: 0;
+            background-color: #0083AF;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+        
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #0083AF !important;
+            background-color: #fff !important;
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        
+        .header {
+            padding-top: 150px;
+            padding-bottom: 70px;
+            color: #ffffff;
+            font-size: 57px;
+            line-height: 68px;
+            font-weight: bold;
+        }
+        
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink 0.7s infinite;
+        }
+        
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .btn:link,
+        .btn:visited {
+            display: inline-block;
+            padding: 10px 30px;
+            font-weight: 300;
+            text-decoration: none;
+            border-radius: 200px;
+            border:3px solid #0083AF;
+            transition: all .3s;
+        }
+        
+        .btn-ghost:link,
+        .btn-ghost:visited {
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .btn-ghost:hover,
+        .btn-ghost:active {
+            border: 3px solid #0083AF;
+            width: 300px;
+            color: #2a3a3f;
+            background-color: #0083AF;
+        }
+        
+        .btn-ghost:hover+.strong,
+        .btn-ghost:active {
+            color: #fff;
+        }
+        
+        .logo {
+            font-size: 200px;
+            color: #0083AF;
+        }
+        
+        .container-fluid {
+            padding: 60px 50px;
+            width: 100%;
+        }
+        
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        
+        .btn-lg {
+            border-color: #0083AF;
+        }
+        
+        #hdr {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 50px;
+            line-height: 45px;
+            color: #2a3a3f;
+        }
+        
+        #my-expertise {
+            padding-top: 60px;
+        }
+        /*----------transpirt the navbar----------*/
+        
+        .opaque-navbar {
+            background-color: rgba(0, 0, 0, 0);
+            /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+            height: 60px;
+            border-bottom: 0px;
+            transition: background-color .5s ease 0s;
+        }
+        
+        .opaque-navbar.opaque {
+            background-color: #0083AF;
+            height: 60px;
+            transition: background-color .5s ease 0s;
+        }
+        
+        ul.dropdown-menu {
+            background-color: black;
+        }
+        
+        @media (max-width:770px) {
+            .navbar-default .navbar-collapse,
+            .navbar-default .navbar-form {
+                background-color: #0083AF;
+            }
+            .opaque-navbar {
+                background-color: #0083AF;
+                height: 60px;
+                transition: background-color .5s ease 0s;
+            }
+            
+                .header p {
+                    font-size: 40px;
+            }
+            
+            .header .element{
+                font-size:40px;
+            }
+        }
+        
+        #my-work {
+            background-color: #EEEEEE;
+        }
+        
+        .p-font {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 32px;
+            color: #524e4d;
+        }
+        
+        .placit {
+            width: auto;
+            height: 300px;
+        }
+        
+        .mywork-text h2 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 26px;
+            color: #2a3a3f;
+        }
+        
+        .footer1 {
+            padding-top: 80px;
+            background-color: #2A3A3F;
+        }
+        
+        .footer1 h4 {
+            color: white;
+        }
+        
+        .footer1 a {
+            text-decoration-line: none;
+        }
+        
+        #work-section {
+            height: 435px;
+            background-color: #0083AF;
+            width: 100%;
+            padding-top: 50px;
+        }
+        
+        #work-section h1 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 45px;
+            color: white;
+        }
+        
+        #work-section p {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 32px;
+            color: white;
+        }
+        
+            
+        .btn2:link,
+        .btn2:visited {
+            display: inline-block;
+            color:white;
+            padding: 10px 30px;
+            font-weight: 300;
+            text-decoration: none;
+            border-radius: 200px;
+            border:2px solid white;
+            transition: all .5s;
+        }
+        .btn-ghost2:link,
+        .btn-ghost2:visited {
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+         .btn-ghost2:hover,
+        .btn-ghost2:active {
+            border: 2px solid white;
+            width: 225px;
+            color: #0083AF;
+            background-color: white;
+        }
+        
+        
+        .btn3:link,
+        .btn3:visited {
+            margin-bottom: 30px;
+            display: inline-block;
+            padding: 10px 30px;
+            font-weight: 300;
+            text-decoration: none;
+            border-radius: 200px;
+            border:2px solid #0083AF;
+            transition: all .5s;
+        }
+        .btn-ghost3:link,
+        .btn-ghost3:visited {
+            color: #0083AF;
+            font-weight: bold;
+            font-size: 20px;
+        }
+         .btn-ghost3:hover,
+        .btn-ghost3:active {
+            border: 2px solid white;
+            width: 225px;
+            color: white;
+            background-color: #0083AF;
+        }
+        .img-responsive {
+            max-width: 100%;
+            height:auto;
+        }
+        .col-sm-8 p{
+            font-style: normal;
+            font-weight:300;
+            font-size:14px;
+            line-height:25px;
+            color:#93a4aa;
+        }
+        .element {
+            margin-bottom: 0px;
+        }
+    </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse">
+    <header class="text-center header">
+        <p>Hi! I'm TAMIM.I design & build</p>
+        <div class="element"></div>
+        <a class="btn btn-ghost" href="#work-section"><strong class="strong">Yes</strong> I'm ready to Hire</a>
+
+
+    </header>
+
+
+
+
+
+    <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top opaque-navba">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"><img src="img/Webp.net-resizeimage.png" class="img-circle" alt="Cinque Terre" width="60" height="60"></a>
+                <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+                
+                <span class="sr-only">Toggle navigation</span>
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#my-expertise">My Expertise</a></li>
+                    <li><a href="#my-work">My works</a></li>
+                    <li><a href="#work-section">Let's Work together</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <form id="my-expertise">
+        <div class=" text-center">
+            <h1 id="hdr">My Expertise</h1>
+            <p class="p-font">My expertise in web development</p>
+        </div>
+
+
+        <div class="animation-element bounce-up cf">
+
+            <div class="container-fluid bg-gre">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2>HTML/CSS</h2>
+                        <p><strong>HTML:</strong>HyperText Markup Language, gives content structure and meaning by defining that content as.</p>
+                            <p><strong>CSS</strong> or Cascading Style Sheets, is a presentation language created to style the appearance of content—using.</p>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="fa fa-html5 logo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="fa fa-css3 logo"></span>
+                </div>
+                <div class="col-sm-8">
+                    <h2>JS/JQuery</h2>
+                    <p><strong>JS:</strong> JavaScript is a programming language commonly used in web development.</p>
+                    <p><strong>JQuery:</strong> jQuery is a concise and fast JavaScript library that can be used to simplify event handling</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Twitter Bootstrap</h2>
+                    <p>Make the page Responsive</p>
+
+                </div>
+                <div class="col-sm-4">
+                    <span class="fa fa-bold logo"></span>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="fa fa-code logo"></span>
+                </div>
+                <div class="col-sm-8">
+                    <h2>PHP/My SQL</h2>
+                    <p><strong>PHP:</strong>is a script language and interpreter that is freely available and used primarily on Linux Web servers.</p>
+                    <p><strong>MYSQL:</strong>is an open source relational database management system (RDBMS) based on Structured Query Language </p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Building IOS Apps using Swift</h2>
+                    <p>Building native IOS Apps using Swift language</p>
+
+                </div>
+                <div class="col-sm-4">
+                    <span class="fa fa-mobile logo"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form id="my-work">
+        <div class="container-fluid">
+            <div class=" text-center">
+                <h1 id="hdr">My works</h1>
+                <p class="p-font">want to see more?<a href="">Email me</a></p>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 mywork-text">
+                    <h3>Lamasat food</h3>
+                    <p>lamasat resturant is one of the most.....</p>
+                    <a class="btn3 btn-ghost3" href="http://lrf4y-com.stackstaging.com/" target="_blank">Visit Website</a>
+
+                </div>
+                <div class="col-sm-4">
+                    <img src="img/placeit_20_1__b2bca3bfeb24805d2e7279bf332a7c5b.jpg" class="placit img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="img/Your-Cuisine.png" class="placit img-responsive">
+                </div>
+                <div class="col-sm-6 mywork-text">
+                    <h3>Your Cuisine App</h3>
+                    <p>Delivery App</p>
+                    <a class="btn3 btn-ghost3" href="http://lrf4y-com.stackstaging.com/" target="_blank">Visit Website</a>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="work-section">
+        <div class="container">
+            <div class=" text-center">
+                <h1>Want to work together?</h1>
+                <p class="p-font">I'm currently accepting new projects and would love to hear about <br />yours. Please take a few minutes to tell me about it.</p>
+                <a class="btn2 btn-ghost2" href="#">Get Started</a>
+            </div>
+            
+        </div>
+    </form>
+
+    <div class="container-fluid footer1">
+        <footer class="text-center">
+            <h4>Powerd by <a href="">Tameem</a></h4>
+
+
+        </footer>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="typed.js"></script>
+    <script>
+        var typed = new Typed('.element', {
+            strings: ["Responsive websites.","IOS Apps.", "Wordpress blogs."],
+            typeSpeed: 50,
+            backDelay: 2500,
+            loop: true
+        });
+
+
+
+
+        $(function() {
+            $('.btn-ghost').hover(function() {
+                $('.strong').css('color', 'white');
+            }, function() {
+                // on mouseout, reset the background colour
+                $('.strong').css('color', '');
+            });
+        });
+
+        //tranparent navbar
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 600) /*height in pixels when the navbar becomes non opaque*/ {
+                $('.opaque-navbar').addClass('opaque');
+            } else {
+                $('.opaque-navbar').removeClass('opaque');
+            }
+        });
+    </script>
+</body>
+
+</html>
